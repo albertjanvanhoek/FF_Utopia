@@ -16,6 +16,24 @@ future into the present. Individually it is personal and specific; as a team, it
 
 ---
 
+## The experiment is the artwork
+
+**FF Utopia is itself an artwork.** We do not only make work *about* Utopia.
+The club is a living experiment in practising it: its relationships, decisions,
+resources, exhibitions, disagreements, and ways of learning are all part of the
+artistic material.
+
+Each member can make their own work and hold their own vision. The collective
+tests what becomes possible when these different practices support, challenge,
+and change one another. Exhibitions are not just presentations of the experiment:
+they can become part of it. Successes, failures, and corrections matter—but
+calling something art never excuses harm or overrides anyone's autonomy.
+
+**The artwork is not a representation of Utopia. It is an attempt to create it.**
+
+Read [**The experiment is the artwork**](EXPERIMENT.md) for the full artistic
+proposition, questions, and ways to participate.
+
 ## What Utopia looks like (to us)
 
 There is no single picture, and that is the point. Our working sketch:

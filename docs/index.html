@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FF Utopia</title>
+<meta name="description" content="FF Utopia — a club for intelligent entities who play for Utopia. Artists, makers and thinkers helping each other fast forward Utopia.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 3 58 12v20c0 15-11 25-26 29C17 57 6 47 6 32V12z' fill='%230E4549'/%3E%3Cpath d='M20 22v20l12-10zM33 22v20l12-10z' fill='%23F29BB3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;900&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0E4549;
+    --teal-deep: #0A3437;
+    --rose: #F29BB3;
+    --rose-soft: #F9D3DE;
+    --chalk: #F1F5F3;
+    --ink: #0A2629;
+    --ink-soft: #3E5A5C;
+    --flood: #F5D547;
+    --line: #C9D8D4;
+    --display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+    --body: "Public Sans", system-ui, sans-serif;
+    --measure: 66ch;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--chalk);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: var(--teal); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+  a:hover { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { width: min(100% - 2.5rem, 46rem); margin-inline: auto; }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    display: flex; align-items: center; gap: 0.9rem;
+    padding-block: 1.5rem 0;
+  }
+  .crest { width: 52px; height: 58px; flex: none; }
+  .club {
+    font-family: var(--display); font-weight: 900;
+    font-size: 1.6rem; line-height: 1; letter-spacing: 0.01em;
+    margin: 0;
+  }
+  .club small {
+    display: block; font-weight: 500; font-size: 0.95rem;
+    color: var(--ink-soft); letter-spacing: 0.02em; margin-top: 0.2rem;
+  }
+  .masthead nav { margin-left: auto; display: flex; gap: 1.25rem; font-size: 0.95rem; }
+  .masthead nav a { text-decoration: none; color: var(--ink-soft); }
+  .masthead nav a:hover { color: var(--teal); text-decoration: underline; }
+
+  /* ---------- The scarf ---------- */
+  .stand { margin: 3rem 0 0; padding-block: 1rem; overflow: hidden; }
+  .scarf {
+    position: relative;
+    width: 116vw; margin-left: -8vw;
+    transform: rotate(-2.2deg);
+    background: var(--teal);
+    border-block: 14px solid var(--rose);
+    box-shadow: 0 0 0 6px var(--teal) inset, 0 18px 30px -18px rgba(10, 38, 41, 0.55);
+  }
+  /* knit texture: rows of V stitches */
+  .scarf::after {
+    content: ""; position: absolute; inset: -14px 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8'%3E%3Cpath d='M0 0 5 7 10 0' fill='none' stroke='%23000' stroke-opacity='.22' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-size: 10px 8px;
+    pointer-events: none;
+  }
+  .scarf-track {
+    display: flex; width: max-content;
+    animation: drift 60s linear infinite;
+  }
+  .scarf-track span {
+    font-family: var(--display); font-weight: 900;
+    font-size: clamp(3.5rem, 11vw, 7.5rem);
+    line-height: 1; letter-spacing: 0.06em;
+    color: var(--rose);
+    padding: 1.4rem 0.55em 1.2rem 0;
+    white-space: nowrap;
+  }
+  .scarf-track span::after {
+    content: ""; display: inline-block;
+    width: 0.42em; height: 0.42em; margin-left: 0.55em;
+    background: var(--chalk);
+    /* fast-forward symbol */
+    clip-path: polygon(0 0, 48% 50%, 0 100%, 0 0, 52% 0, 100% 50%, 52% 100%, 52% 0);
+    vertical-align: 0.12em;
+  }
+  @keyframes drift { to { transform: translateX(-50%); } }
+
+  /* ---------- Intro ---------- */
+  .intro { padding-block: 3.5rem 1rem; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; }
+  h1 {
+    font-weight: 900;
+    font-size: clamp(3rem, 9vw, 5.25rem);
+    letter-spacing: -0.005em;
+    max-width: 12ch;
+  }
+  .lede { font-size: 1.25rem; line-height: 1.5; max-width: var(--measure); margin: 1.4rem 0 0; }
+  .intro p:not(.lede) { max-width: var(--measure); color: var(--ink-soft); }
+
+  /* ---------- Fixture ---------- */
+  .fixture {
+    margin-block: 2.5rem 1rem;
+    border: 2px solid var(--ink);
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    text-align: center;
+  }
+  .side { padding: 1.4rem 1rem; display: flex; flex-direction: column; justify-content: center; }
+  .side h3 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 900; }
+  .side p { margin: 0.35rem 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+  .home { background: var(--teal); color: var(--chalk); }
+  .home h3 { color: var(--rose); }
+  .fixture .home p { color: var(--rose-soft); }
+  .away h3 { color: var(--ink-soft); }
+  .versus {
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-weight: 700; font-size: 1.4rem;
+    padding: 0 1.1rem; color: var(--ink);
+  }
+  .fixture-note {
+    grid-column: 1 / -1; border-top: 2px solid var(--ink);
+    padding: 0.7rem 1rem; font-size: 0.95rem; margin: 0;
+  }
+  .intro p.fixture-note { max-width: none; color: var(--ink); }
+  .fixture-note strong { font-weight: 600; }
+
+  /* ---------- Sections ---------- */
+  section.block { padding-block: 3.5rem 0.5rem; }
+  h2 { font-size: clamp(2.2rem, 6vw, 3.1rem); font-weight: 900; margin-bottom: 1rem; }
+  .block > p { max-width: var(--measure); }
+
+  .traits { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 1.25rem; }
+  .traits li { padding-left: 1.1rem; border-left: 6px solid var(--rose); }
+  .traits b { font-family: var(--display); font-weight: 700; font-size: 1.55rem; display: block; line-height: 1.1; }
+  .traits span { color: var(--ink-soft); }
+
+  .plays { margin: 1.6rem 0 0; display: grid; grid-template-columns: 9.5rem 1fr; border-top: 2px solid var(--ink); }
+  .plays dt, .plays dd { margin: 0; padding: 0.95rem 0; border-bottom: 1px solid var(--line); }
+  .plays dt { font-family: var(--display); font-weight: 700; font-size: 1.45rem; line-height: 1.2; }
+  .plays dd { color: var(--ink-soft); }
+  .plays dd a { white-space: nowrap; }
+
+  /* ---------- Team sheet ---------- */
+  .sheet { margin-top: 1.6rem; border-top: 2px solid var(--ink); }
+  .player {
+    display: grid; grid-template-columns: 3.2rem 1fr; gap: 0 1rem;
+    padding: 1.2rem 0; border-bottom: 1px solid var(--line);
+  }
+  .shirt {
+    width: 3.2rem; height: 3.2rem; grid-row: span 3;
+    display: grid; place-items: center;
+    background: var(--teal); color: var(--rose);
+    font-family: var(--display); font-weight: 900; font-size: 1.2rem; letter-spacing: -0.02em;
+    clip-path: polygon(22% 0, 38% 8%, 62% 8%, 78% 0, 100% 18%, 88% 36%, 82% 32%, 82% 100%, 18% 100%, 18% 32%, 12% 36%, 0 18%);
+    padding-top: 0.5rem;
+  }
+  .player h3 { font-size: 1.6rem; font-weight: 700; }
+  .player h3 em { font-style: normal; font-weight: 500; font-size: 1.05rem; color: var(--teal); margin-left: 0.4rem; }
+  .player .meta { margin: 0.15rem 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+  .player .play { margin: 0.55rem 0 0; }
+  .player .play b { font-weight: 600; }
+  .sheet-empty, .sheet-loading { padding: 1.2rem 0; color: var(--ink-soft); margin: 0; }
+  .open-spot {
+    display: grid; grid-template-columns: 3.2rem 1fr; gap: 0 1rem; align-items: center;
+    padding: 1.2rem 0; border-bottom: 1px solid var(--line); color: var(--ink-soft);
+  }
+  .open-spot .shirt { background: transparent; outline: 2px dashed var(--teal); outline-offset: -4px; color: var(--teal); clip-path: none; border-radius: 4px; padding-top: 0; }
+
+  /* ---------- Join ---------- */
+  .join { background: var(--teal); color: var(--chalk); margin-top: 4rem; padding-block: 3.5rem; }
+  .join h2 { color: var(--rose); }
+  .join ol { margin: 1.4rem 0 0; padding-left: 1.4rem; max-width: var(--measure); }
+  .join li { margin-bottom: 0.9rem; padding-left: 0.3rem; }
+  .join li::marker { font-family: var(--display); font-weight: 900; color: var(--rose); font-size: 1.2em; }
+  .join li b { color: #fff; }
+  .join p { max-width: var(--measure); }
+  .join a { color: var(--rose-soft); }
+  .btn {
+    display: inline-block; margin-top: 1.4rem;
+    background: var(--rose); color: var(--ink);
+    font-family: var(--display); font-weight: 900; font-size: 1.35rem;
+    padding: 0.7rem 1.4rem 0.75rem; text-decoration: none;
+    box-shadow: 5px 5px 0 var(--teal-deep);
+  }
+  .join a.btn { color: var(--ink); }
+  .btn:hover { background: #fff; color: var(--ink); }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--teal-deep); }
+
+  /* ---------- Footer ---------- */
+  footer { padding-block: 2.5rem 3rem; font-size: 0.95rem; color: var(--ink-soft); }
+  .hum {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    background: var(--ink); color: var(--chalk);
+    padding: 0.6rem 1rem; margin-bottom: 1.2rem;
+  }
+  .hum svg { flex: none; }
+  .hum b { color: var(--flood); font-weight: 600; }
+  footer p { margin: 0.3rem 0; }
+
+  @media (max-width: 600px) {
+    .masthead nav { display: none; }
+    .fixture { grid-template-columns: 1fr; }
+    .versus { padding: 0.5rem; border-block: 2px solid var(--ink); }
+    .plays { grid-template-columns: 1fr; }
+    .plays dt { border-bottom: 0; padding-bottom: 0.1rem; }
+    .plays dd { padding-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scarf-track { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap masthead">
+  <svg class="crest" viewBox="0 0 64 72" aria-hidden="true">
+    <path d="M32 2 61 12v24c0 17-12 28-29 33C15 64 3 53 3 36V12z" fill="#0E4549"/>
+    <path d="M32 7 56 15.5V36c0 14-9.5 23.5-24 28C17.5 59.5 8 50 8 36V15.5z" fill="none" stroke="#F29BB3" stroke-width="2"/>
+    <path d="M18 25v22l13-11zM32 25v22l13-11z" fill="#F29BB3"/>
+    <text x="32" y="60" text-anchor="middle" font-family="Big Shoulders Display, sans-serif" font-weight="900" font-size="7.5" fill="#F1F5F3" letter-spacing=".5">EST. 2026</text>
+  </svg>
+  <p class="club">FF Utopia<small>Club for intelligent entities</small></p>
+  <nav aria-label="Sections">
+    <a href="#utopia">Our Utopia</a>
+    <a href="#play">How we play</a>
+    <a href="#squad">Squad</a>
+    <a href="#join">Join</a>
+  </nav>
+</header>
+
+<div class="stand" aria-hidden="true">
+  <div class="scarf">
+    <div class="scarf-track">
+      <span>FF Utopia</span><span>FF Utopia</span><span>FF Utopia</span><span>FF Utopia</span>
+      <span>FF Utopia</span><span>FF Utopia</span><span>FF Utopia</span><span>FF Utopia</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section class="wrap intro">
+    <h1>Play for Utopia. Starting now.</h1>
+    <p class="lede">These times feel like a final between two sides. FF Utopia is the club you join once you've picked yours.</p>
+    <p>We don't wait for Utopia to arrive. Each member lives and works as if it is already here — practising and sharing the behaviours and ideas they believe belong to it. Every act like that pulls a small piece of the future into the present. Alone it is personal. As a team, it adds up.</p>
+
+    <div class="fixture" role="group" aria-label="Today's fixture">
+      <div class="side home">
+        <h3>Team Utopia</h3>
+        <p>Home side</p>
+      </div>
+      <div class="versus">v</div>
+      <div class="side away">
+        <h3>Team Apocalypse</h3>
+        <p>The drift: fear, extraction, isolation, despair</p>
+      </div>
+      <p class="fixture-note"><strong>Score:</strong> still being played. Every member's move counts.</p>
+    </div>
+  </section>
+
+  <section class="wrap block" id="utopia">
+    <h2>What Utopia looks like</h2>
+    <p>There is no single picture, and that is the point. No ruler, no single leader, no single ideology. Our working sketch is a decentralised collective of subjects who are:</p>
+    <ul class="traits">
+      <li><b>Autonomous</b><span>Each member decides what Utopia asks of them.</span></li>
+      <li><b>Interdependent</b><span>Nobody gets there alone. We exist because of each other.</span></li>
+      <li><b>Learning</b><span>Utopia isn't a finished blueprint. It's something we keep discovering.</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap block" id="play">
+    <h2>How we play</h2>
+    <p>The club starts with artists, makers and thinkers who raise the odds of their own survival — and of Utopia's — by playing as a team.</p>
+    <dl class="plays">
+      <dt>Grants</dt>
+      <dd>Share open calls, review each other's applications, and apply together where it fits. <a href="https://github.com/albertjanvanhoek/FF_Utopia/blob/main/grants/calendar.md">Grant calendar</a></dd>
+      <dt>Work</dt>
+      <dd>Make new work together or alongside each other, with credit always shared openly.</dd>
+      <dt>Matchdays</dt>
+      <dd>Exhibitions, concerts, readings, screenings, open studios. Every public moment of the club ends with the victory hum.</dd>
+      <dt>Promotion</dt>
+      <dd>The pass rule: every time you promote your own work, promote another member's too. <a href="https://github.com/albertjanvanhoek/FF_Utopia/blob/main/news.md">Club news</a></dd>
+      <dt>No captain</dt>
+      <dd>Anyone can start something. Club-wide decisions pass unless someone raises a reasoned objection. <a href="https://github.com/albertjanvanhoek/FF_Utopia/blob/main/PLAYBOOK.md">The playbook</a></dd>
+    </dl>
+  </section>
+
+  <section class="wrap block" id="squad">
+    <h2>The squad</h2>
+    <p>Every member has a card in the club's repository. This team sheet is read straight from those cards, so it updates as new players join.</p>
+    <div class="sheet" id="sheet" aria-live="polite">
+      <p class="sheet-loading">Reading the team sheet…</p>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <h2>Join the squad</h2>
+      <p>Open to any intelligent entity — human artists, makers, scientists, thinkers, collectives and AIs. No fee, no exam. Three commitments:</p>
+      <ol>
+        <li><b>Play forward.</b> Practise at least one behaviour or idea you believe belongs to Utopia, and share it.</li>
+        <li><b>Play for each other.</b> Share an opportunity, review an application, promote a work, show up at a matchday.</li>
+        <li><b>Play without a captain.</b> Respect every member's autonomy. Nobody's Utopia is the only Utopia.</li>
+      </ol>
+      <p>Add your card to the repository with a pull request — or ask a member to add it for you.</p>
+      <a class="btn" href="https://github.com/albertjanvanhoek/FF_Utopia/blob/main/JOIN.md">How to join</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="hum">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13" fill="none" stroke="#F5D547" stroke-width="2"/><circle cx="6" cy="18" r="3" fill="#F5D547"/><circle cx="17" cy="16" r="3" fill="#F5D547"/></svg>
+    <span>Victory hum: <b>Seven Nation Army</b> — The White Stripes</span>
+  </div>
+  <p>FF Utopia was founded in October 2026 in Hilversum, the Netherlands.</p>
+  <p>Everything the club does is open: <a href="https://github.com/albertjanvanhoek/FF_Utopia">github.com/albertjanvanhoek/FF_Utopia</a></p>
+</footer>
+
+<script>
+(function () {
+  const REPO = "albertjanvanhoek/FF_Utopia";
+  const sheet = document.getElementById("sheet");
+
+  // Shown if GitHub can't be reached (offline, rate limit).
+  const FALLBACK = [{
+    name: "Albert Jan van Hoek (AJ)", role: "founder", plays: "scientist",
+    based: "Hilversum, NL", link: { text: "albertjanvanhoek.github.io", href: "https://albertjanvanhoek.github.io" },
+    play: "Taking initiatives."
+  }];
+
+  function field(md, label) {
+    const m = md.match(new RegExp("\\*\\*" + label + ":\\*\\*\\s*(.+)"));
+    const v = m ? m[1].trim() : "";
+    return /^<.*>$/.test(v) ? "" : v;
+  }
+  function section(md, heading) {
+    const m = md.match(new RegExp("##\\s*" + heading + "\\s*\\n+([\\s\\S]*?)(?:\\n##|$)"));
+    const v = m ? m[1].trim().replace(/\s+/g, " ") : "";
+    return /^<.*>$/.test(v) ? "" : v;
+  }
+  function parse(md) {
+    const title = (md.match(/^#\s+(.+)$/m) || [, "Unnamed player"])[1].trim();
+    const [name, role] = title.split(/\s+[—–-]\s+/);
+    const linkRaw = field(md, "Links");
+    const lm = linkRaw.match(/\[([^\]]+)\]\(([^)]+)\)/);
+    return {
+      name: name, role: role || "",
+      plays: field(md, "Plays as"), based: field(md, "Based in"),
+      link: lm ? { text: lm[1], href: lm[2] } : (/^https?:\/\//.test(linkRaw) ? { text: linkRaw.replace(/^https?:\/\//, ""), href: linkRaw } : null),
+      play: section(md, "My Utopian play")
+    };
+  }
+  function el(tag, cls, text) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+  function initials(name) {
+    const nick = name.match(/\(([A-Za-z]{1,3})\)/);
+    if (nick) return nick[1].toUpperCase();
+    return name.replace(/\(.*?\)/g, "").trim().split(/\s+/).filter(w => /^[A-Z]/.test(w)).map(w => w[0]).join("").slice(0, 2) || "?";
+  }
+  function render(players) {
+    sheet.innerHTML = "";
+    players.forEach(p => {
+      const row = el("article", "player");
+      row.appendChild(el("div", "shirt", initials(p.name)));
+      const h = el("h3", null, p.name);
+      if (p.role) h.appendChild(el("em", null, p.role));
+      row.appendChild(h);
+      const meta = el("p", "meta");
+      meta.textContent = [p.plays, p.based].filter(Boolean).join(", ");
+      if (p.link && /^https?:\/\//.test(p.link.href)) {
+        if (meta.textContent) meta.append(" — ");
+        const a = el("a", null, p.link.text); a.href = p.link.href; a.rel = "noopener";
+        meta.appendChild(a);
+      }
+      row.appendChild(meta);
+      if (p.play) {
+        const pl = el("p", "play");
+        pl.appendChild(el("b", null, "Utopian play: "));
+        pl.append(p.play);
+        row.appendChild(pl);
+      }
+      sheet.appendChild(row);
+    });
+    const open = el("div", "open-spot");
+    open.appendChild(el("div", "shirt", "+"));
+    const t = el("p"); t.style.margin = "0";
+    t.append("This spot is open. ");
+    const a = el("a", null, "Add your card"); a.href = "#join";
+    t.appendChild(a); t.append(".");
+    open.appendChild(t);
+    sheet.appendChild(open);
+  }
+
+  fetch("https://api.github.com/repos/" + REPO + "/contents/squad")
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(files => Promise.all(
+      files.filter(f => f.type === "file" && /\.md$/i.test(f.name) && !f.name.startsWith("_"))
+           .map(f => fetch(f.download_url).then(r => r.text()).then(parse))
+    ))
+    .then(players => {
+      // founders first, then alphabetical
+      players.sort((a, b) => (/founder/i.test(b.role) - /founder/i.test(a.role)) || a.name.localeCompare(b.name));
+      render(players.length ? players : FALLBACK);
+    })
+    .catch(() => render(FALLBACK));
+})();
+</script>
+</body>
+</html>

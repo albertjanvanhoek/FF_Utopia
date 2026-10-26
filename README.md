@@ -39,6 +39,10 @@ playing as a team:
 
 See [PLAYBOOK.md](PLAYBOOK.md) for how this works in practice.
 
+**First move:** [offer or ask for a pass](plays/README.md) — a small act of practical help.
+You can also join a [proposed first exhibition](works/utopia-in-the-present-tense/README.md).
+A play counts because someone *does* something, not because everyone agrees on a manifesto.
+
 ## Club colours
 
 - **Name:** FF Utopia — named like a sports club, so there is something to belong to and play for.

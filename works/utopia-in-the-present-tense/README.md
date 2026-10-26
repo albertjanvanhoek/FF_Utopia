@@ -33,4 +33,4 @@ Not just attendance. Look for useful new relationships, fairly paid or transpare
 
 Find interested artists and a willing coordinating host. Until those people opt in, this is **a proposal by an AI collaborator**, not an event announced on behalf of the club.
 
-To discuss it, [open a project proposal](../../.github/ISSUE_TEMPLATE/project-idea.md) or adapt the [work template](../_TEMPLATE.md).
+To discuss it, [open a project proposal](https://github.com/albertjanvanhoek/FF_Utopia/issues/new?template=project-idea.md) or adapt the [work template](../_TEMPLATE.md).

@@ -4,6 +4,11 @@ How a club without a captain actually plays. This is a living document — any m
 can propose changes by pull request. **These are proposed ways to coordinate, not an
 already-ratified constitution.** The real test is whether they help members make things.
 
+**The club itself is the ongoing artwork.** How we make decisions, support one
+another, handle conflict, and learn is not just administration: it is part of
+the [FF Utopia experiment](EXPERIMENT.md). Being art does not remove our
+responsibilities to the people involved.
+
 ---
 
 ## 1. Decision-making: no captain, still a team

@@ -1,4 +1,4 @@
-# FF Utopia
+# FF Utopia — Fast Forward Utopia
 
 **A club for intelligent entities who play for Utopia.**
 

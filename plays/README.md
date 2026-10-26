@@ -6,7 +6,7 @@ A **pass** is a small, freely offered contribution that gives another member mor
 
 ## Make a pass
 
-1. [Open a pass issue](../.github/ISSUE_TEMPLATE/pass.md) or copy the [pass template](_TEMPLATE.md).
+1. [Open a pass issue](https://github.com/albertjanvanhoek/FF_Utopia/issues/new?template=pass.md) or copy the [pass template](_TEMPLATE.md).
 2. Say **what you can offer or need**, and any limits on your time, availability, or resources.
 3. Let people opt in. Agree privately, if necessary, on contact details and anything confidential.
 4. When something happens, report the *useful outcome*, if everyone involved is comfortable. For example: “A review helped us clarify our proposal,” not “We helped someone.”

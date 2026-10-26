@@ -3,6 +3,8 @@
 **Status: Idea — not yet a scheduled or funded exhibition.**
 **Seeking:** artists, a possible host/venue, curatorial partners, and people interested in helping shape the experiment.
 
+This proposed matchday is one possible episode within [FF Utopia as a living artwork](../../EXPERIMENT.md). The club's relationships and working practices are part of the larger experiment; the exhibition can make them visible without claiming to be its conclusion.
+
 ## The question
 
 > What could you do or make today that you believe would be normal in a better world?
